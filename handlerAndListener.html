@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <div id="test"> KLIKNIJ</div>
+    <script>
+        window.onload = () => {
+            console.log("Wszystko załadowane poprawnie")
+        }
+        /*  async function main() {
+        await Promise.all([firstTask(), secondTask()]);
+        }
+        main(); */
+        window.addEventListener("load", () => {
+            console.log("ADD EVENT LISTENER")
+        })
+
+
+        let data = [
+            {
+                name: 'kasia',
+                id: 1
+            },
+            {
+                name: 'kacper',
+                id: 2
+            },
+            {
+                name: 'konrad',
+                id: 3
+            },
+            ];
+       let writable = document.getElementById("input");
+       writable.addEventListener("input", () => {
+        console.log('dziala')
+            data.filter((v,index) => {
+            if(v.name.includes(writable.value)) { return console.log(v.name,index + " " + v.id)}
+            })
+       });
+
+       let test = document.getElementById("test");
+        test.addEventListener("click", () => {
+            console.log('dziala')
+            data.filter((v,index) => {
+            if(v.name.includes(text)) { return console.log(v.name,index + " " + v.id)}
+            })
+        })
+       
+        console.log(typeof(data))
+    </script>
+</body>
+</html>
